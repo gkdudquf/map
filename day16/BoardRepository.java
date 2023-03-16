@@ -32,7 +32,7 @@ public class BoardRepository {
 
 	}
 
-	public boolean updateNew(String bno, String updateTitle, String updqteWriter) {
+	public boolean updateNew(BoardDTO boardDTO, String bno) {
 		for (String Bno : map.keySet()) {
 			if (map.get(Bno).getBno().equals(bno)) {
 				map.get(Bno).setTitle(boardDTO.getTitle());

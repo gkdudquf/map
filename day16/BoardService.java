@@ -72,19 +72,21 @@ public class BoardService {
 //			boardDTO.setWriter(sc.next());
 			String updateWriter = sc.next();
 			sc.nextLine();
-			if (br.updateNew(bno, updateTitle, updateWriter)) {
+			BoardDTO boardDTO = new BoardDTO(updateTitle, updateWriter);
+			if (br.updateNew(boardDTO, bno)) {
 				System.out.println("업데이트 성공");
 			} else {
 				System.out.println("업데이트 실패");
 			}
 		}
 	}
-
+	//refactoring 완성된 코드를 다시 보면서 불필요한 것들을 재정리하는 것
 	public void delete() {
 		System.out.print("삭제할 글번호> ");
-		String bno = sc.next();
-		sc.nextLine();
-		if (br.delete(bno)) {
+		String bno = sc.next();sc.nextLine();
+		boolean result = br.delete(bno);
+//		if (br.delete(bno)) {
+		if(result) {
 			System.out.println("삭제완료");
 		} else {
 			System.out.println("삭제실패");
