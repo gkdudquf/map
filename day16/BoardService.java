@@ -64,13 +64,15 @@ public class BoardService {
 		if (b == null) {
 			System.out.println("조회할 수 없는 글번호 입니다");
 		} else {
-			BoardDTO boardDTO = new BoardDTO();
+//			BoardDTO boardDTO = new BoardDTO();
 			System.out.print("수정할 제목> ");
-			boardDTO.setTitle(sc.nextLine());
+//			boardDTO.setTitle(sc.nextLine());
+			String updateTitle = sc.next();
 			System.out.print("수정할 작성자> ");
-			boardDTO.setWriter(sc.next());
+//			boardDTO.setWriter(sc.next());
+			String updateWriter = sc.next();
 			sc.nextLine();
-			if (br.update(boardDTO, bno)) {
+			if (br.updateNew(bno, updateTitle, updateWriter)) {
 				System.out.println("업데이트 성공");
 			} else {
 				System.out.println("업데이트 실패");

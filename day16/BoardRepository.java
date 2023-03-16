@@ -5,8 +5,12 @@ import java.util.*;
 public class BoardRepository {
 	private Map<String, BoardDTO> map = new TreeMap<>();
 	BoardDTO boardDTO = new BoardDTO();
+	//BoardDTO타입만 List에 담을수있음
 	List<BoardDTO> list = new ArrayList<>();
 
+	//리턴타입:
+	//메서드이름:
+	//매개변수:
 	public boolean save(BoardDTO boardDTO) {
 		if (map.put(boardDTO.getBno(), boardDTO) == null) {
 			return true;
@@ -28,7 +32,7 @@ public class BoardRepository {
 
 	}
 
-	public boolean update(BoardDTO boardDTO, String bno) {
+	public boolean updateNew(String bno, String updateTitle, String updqteWriter) {
 		for (String Bno : map.keySet()) {
 			if (map.get(Bno).getBno().equals(bno)) {
 				map.get(Bno).setTitle(boardDTO.getTitle());
