@@ -22,7 +22,7 @@ public class BoardService {
 		sc.nextLine();
 
 		boolean success = br.save(boardDTO);
-		if (success = true) {
+		if (true) {
 			System.out.println("게시글 등록완료!");
 		} else {
 			System.out.println("게시글 등록실패");
