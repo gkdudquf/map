@@ -2,8 +2,11 @@ package day17_Bank;
 
 import java.util.*;
 
+import day13.BreakdownDTO;
+
 public class ClientRepository {
 	private Map<String, ClientDTO> clientMap = new HashMap<>();
+	List<BreakdownDTO> bList = new ArrayList<>();
 	
 	public boolean save(ClientDTO clientDTO) {
 		ClientDTO result = clientMap.put(clientDTO.getAccount(), clientDTO);
@@ -47,5 +50,18 @@ public class ClientRepository {
 		}
 		return false;
 	}
+	
+	
+	
+	public List<BreakdownDTO> breakList(String account){
+		List<BreakdownDTO> list = new ArrayList<>();
+		for(BreakdownDTO b : bList) {
+			if(b.getAccount().equals(account)) {
+				list.add(b);
+			}
+		}
+		return list;
+	}
+	
 	
 }
