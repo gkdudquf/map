@@ -9,6 +9,8 @@ public class ClientService {
 	public static ClientService getInstance() {
 		return service;
 	}
+	private String loginId = null;
+	private String loginPw = null;
 	
 	public void save() {
 		ClientDTO clientDTO = new ClientDTO();
@@ -35,6 +37,8 @@ public class ClientService {
 		String pw = sc.next();
 		boolean result = cr.loginCheck(id, pw);
 		if(result) {
+			loginId = id;
+			loginPw = pw;		
 			System.out.println("로그인 성공!");
 			return true;
 		}else {
@@ -53,6 +57,26 @@ public class ClientService {
 		}
 	}
 	
+//	public void findById() {
+//		System.out.println("아이디 입력> ");
+//		String id = sc.next();
+//		System.out.println("비밀번호 입력> ");
+//		String pw = sc.next();
+//				
+//	}
+	public boolean delete() {
+		boolean result = cr.delete(loginId, loginPw);
+		if(result) {
+			System.out.println("삭제성공");
+			return false;
+		}else {
+			System.out.println("삭제실패");
+			return true;
+		}
+	}
 	
-	
+	public void logout() {
+		String loginId = null;
+		String loginPw = null;
+	}
 }

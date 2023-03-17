@@ -42,9 +42,9 @@ public class ClientMain {
 			}else if(menu == 5 && loginOk) {
 //				service.update();
 			}else if(menu == 6 && loginOk) {
-//				loginOk = service.delete();
+				loginOk = service.delete();
 			}else if(menu == 7 && loginOk) {
-//				service.logout();
+				service.logout();
 				loginOk = false;
 			}else if(menu == 0 && loginOk) {
 				break;
