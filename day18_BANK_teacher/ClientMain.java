@@ -1,4 +1,4 @@
-package day17_Bank;
+package day18_BANK_teacher;
 
 import java.util.Scanner;
 
@@ -21,7 +21,7 @@ public class ClientMain {
 			
 			if(menu == 1) {
 				if(loginOk) {
-//					service.findById();
+					service.findById();
 				}else {
 					service.save();
 				}
@@ -33,12 +33,12 @@ public class ClientMain {
 				}
 			}else if(menu == 3) {
 				if(loginOk) {
-//					service.withdraw();
+					service.withdraw();
 				}else {
 					service.findAll();
 				}
 			}else if(menu == 4 && loginOk) {
-//				service.transfer();
+				service.transfer();
 			}else if(menu == 5 && loginOk) {
 				service.update();
 			}else if(menu == 6 && loginOk) {

@@ -1,4 +1,4 @@
-package day17_Bank;
+package day17_Bank.teacher;
 
 import java.util.Scanner;
 
