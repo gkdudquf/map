@@ -35,7 +35,7 @@ public class ClientMain {
 				if(loginOk) {
 //					service.withdraw();
 				}else {
-//					service.findAll();
+					service.findAll();
 				}
 			}else if(menu == 4 && loginOk) {
 //				service.transfer();

@@ -16,6 +16,8 @@ public class ClientService {
 		clientDTO.setId(sc.next());
 		System.out.println("비밀번호 입력> ");
 		clientDTO.setPassword(sc.next());
+		System.out.println("이름 입력> ");
+		clientDTO.setName(sc.next());
 		System.out.println("초기입금액> ");
 		clientDTO.setBalance(sc.nextLong());
 		boolean result = cr.save(clientDTO);
@@ -41,6 +43,16 @@ public class ClientService {
 		}
 		
 	}
+	
+	public  void findAll() {
+		Map<String, ClientDTO> clientMap = cr.findAll();
+		List<String> keySet = new ArrayList<>(clientMap.keySet());
+		System.out.println("계좌번호\t\t아이디\t비밀번호\t이름\t초기입금액\t개설일");
+		for(String key : clientMap.keySet()) {
+			System.out.println(clientMap.get(key));
+		}
+	}
+	
 	
 	
 }
