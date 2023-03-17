@@ -28,6 +28,16 @@ public class ClientRepository {
 		return clientMap;
 	}
 	
+	public boolean update(String loginId, String loginPw, String pw) {
+		for(String key : clientMap.keySet()) {
+			if(loginId.equals(clientMap.get(key).getId()) && loginPw.equals(clientMap.get(key).getPassword())) {
+				clientMap.get(key).setPassword(pw);
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public boolean delete(String loginId, String loginPw) {
 		for(String key : clientMap.keySet()) {
 			if(loginId.equals(clientMap.get(key).getId()) && loginPw.equals(clientMap.get(key).getPassword())) {

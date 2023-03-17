@@ -24,6 +24,11 @@ public class ClientDTO {
 		this.joinDate = DTF.format(LocalDateTime.now());
 	}
 	
+	public ClientDTO(String passWord, String loginPw) {
+		this.id = passWord;
+		this.password = loginPw;
+	}
+	
 	public String getAccount() {
 		return account;
 	}

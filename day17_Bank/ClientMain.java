@@ -40,7 +40,7 @@ public class ClientMain {
 			}else if(menu == 4 && loginOk) {
 //				service.transfer();
 			}else if(menu == 5 && loginOk) {
-//				service.update();
+				service.update();
 			}else if(menu == 6 && loginOk) {
 				loginOk = service.delete();
 			}else if(menu == 7 && loginOk) {
